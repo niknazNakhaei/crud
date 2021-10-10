@@ -4,12 +4,14 @@ Spring:
       on-profile: Local
 
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:~/mydbInHomeDir;AUTO_SERVER=TRUE
     username: sa
     password:
     driver-class-name: org.h2.Driver
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+
   h2:
     console:
       enabled: true

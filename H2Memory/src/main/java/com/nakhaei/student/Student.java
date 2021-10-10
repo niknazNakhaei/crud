@@ -12,7 +12,7 @@ import javax.persistence.*;
 public class Student {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
     private Long id;
 
@@ -21,4 +21,6 @@ public class Student {
 
     @Column(name = "C_LAST_NAME")
     private String family;
+
+
 }
