@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <databaseChangeLog
-        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-    <include file="/db/changelog/changes/student/create-student-table-changelog-1.xml"/>
-    <include file="/db/changelog/changes/job/create-job-table-changelog-1.xml"/>
-    <include file="/db/changelog/changes/student/create-student-table-changelog-2.xml"/>
+    <changeSet author="NIKNAZ" id="MODIFY_STUDENT_TABLE_ADD_NEW_COLUMN">
 
+        <addColumn tableName="STUDENT">
+            <column name="c_job" type="NUMBER(19,0)">
+                <constraints nullable="true" foreignKeyName="fk_job" references="JOB(id)"/>
+            </column>
+        </addColumn>
 
+    </changeSet>
 </databaseChangeLog>

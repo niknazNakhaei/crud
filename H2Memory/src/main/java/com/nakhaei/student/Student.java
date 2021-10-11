@@ -1,5 +1,6 @@
 package com.nakhaei.student;
 
+import com.nakhaei.job.Job;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,6 +22,10 @@ public class Student {
 
     @Column(name = "C_LAST_NAME")
     private String family;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "C_JOB")
+    private Job job;
 
 
 }
